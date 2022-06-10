@@ -84,6 +84,6 @@ if __name__ == '__main__':
 
     # 出力
     sortedKeys = sorted(dictionary.keys())
-    with open('migemo-dict', mode='w', encoding='utf-16') as f:
+    with open('migemo-dict', mode='w', encoding='utf-8') as f:
         for k in sortedKeys:
             f.write(k + '\t' + '\t'.join(sorted(list(set(dictionary[k])))) + '\n')
