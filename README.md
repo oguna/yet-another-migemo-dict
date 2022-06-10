@@ -12,7 +12,7 @@ C/Migemoで用いられているMigemo用辞書は、SKKプロジェクトの辞
 | ファイル | プロジェクト | ライセンス |
 |---|---|---|
 | single_kanji.tsv | [Mozc](https://github.com/google/mozc) | 3-clause BSD |
-| lex_x_x.csv | [UniDic](https://unidic.ninjal.ac.jp/) | GPL / LGPL / BSD |
+| lex_x_x.csv | [UniDic](https://clrd.ninjal.ac.jp/unidic/) | GPL / LGPL / 3-clause BSD |
 
 ## 生成方法
 
