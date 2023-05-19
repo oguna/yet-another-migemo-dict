@@ -16,7 +16,7 @@ C/Migemoで用いられているMigemo用辞書は、SKKプロジェクトの辞
 
 ## 生成方法
 
-[UniDic](https://unidic.ninjal.ac.jp/)から現代書き言葉のUniDicをダウンロードし、
+[UniDic](https://clrd.ninjal.ac.jp/unidic/)から現代書き言葉のUniDicをダウンロードし、
 ダウンロードした`.tar.gz`に格納されている`lex_x_x.csv` (`x`は数字)をこのフォルダ内に配置してください。
 
 次に、`build.py` を実行すると、`migmeo-dict`ファイルを出力します。
