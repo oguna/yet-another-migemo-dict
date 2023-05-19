@@ -1,6 +1,7 @@
 import re
 import csv
 from typing import Optional
+from pathlib import Path
 
 # カタカナをひらがなに変換する
 def kata2hira(hira: str) -> str:
@@ -56,31 +57,32 @@ if __name__ == '__main__':
             dictionary[key] = words
 
     # UniDicのファイルを読み込み
-    with open('lex_3_1.csv', encoding='utf-8') as f:
-        reader = csv.reader(f, delimiter=',')
-        for row in reader:
-            word = row[0]
-            reading = row[24]
-            pair = convertKanjiHiraganaWord(word, reading)
-            if pair:
-                kana = pair[0]
-                kanji = pair[1]
-                if kana in dictionary:
-                    dictionary[kana].append(kanji)
-                else:
-                    dictionary[kana] = [kanji]
-            pair = convertAlphabeticWord(word, reading)
-            if pair:
-                kana = pair[0]
-                kanji = pair[1]
-                if kana in dictionary:
-                    dictionary[kana].append(kanji)
-                else:
-                    dictionary[kana] = [kanji]
-                if kanji in dictionary:
-                    dictionary[kanji].append(kana)
-                else:
-                    dictionary[kanji] = [kana]
+    for path in Path(".").glob("lex*.csv"):
+        with open(path, encoding='utf-8') as f:
+            reader = csv.reader(f, delimiter=',')
+            for row in reader:
+                word = row[0]
+                reading = row[24]
+                pair = convertKanjiHiraganaWord(word, reading)
+                if pair:
+                    kana = pair[0]
+                    kanji = pair[1]
+                    if kana in dictionary:
+                        dictionary[kana].append(kanji)
+                    else:
+                        dictionary[kana] = [kanji]
+                pair = convertAlphabeticWord(word, reading)
+                if pair:
+                    kana = pair[0]
+                    kanji = pair[1]
+                    if kana in dictionary:
+                        dictionary[kana].append(kanji)
+                    else:
+                        dictionary[kana] = [kanji]
+                    if kanji in dictionary:
+                        dictionary[kanji].append(kana)
+                    else:
+                        dictionary[kanji] = [kana]
 
     # 出力
     sortedKeys = sorted(dictionary.keys())
