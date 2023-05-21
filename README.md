@@ -12,25 +12,21 @@ C/Migemoで用いられているMigemo用辞書は、SKKプロジェクトの辞
 | ファイル | プロジェクト | ライセンス |
 |---|---|---|
 | single_kanji.tsv | [Mozc](https://github.com/google/mozc) | 3-clause BSD |
-| lex_x_x.csv | [UniDic](https://clrd.ninjal.ac.jp/unidic/) | GPL / LGPL / 3-clause BSD |
+| lex*.csv | [UniDic](https://clrd.ninjal.ac.jp/unidic/) | GPL / LGPL / 3-clause BSD |
 
 ## 生成方法
 
-[UniDic](https://clrd.ninjal.ac.jp/unidic/)から現代書き言葉のUniDicをダウンロードし、
-ダウンロードした`.tar.gz`に格納されている`lex_x_x.csv` (`x`は数字)をこのフォルダ内に配置してください。
+1. [UniDic](https://clrd.ninjal.ac.jp/unidic/)から現代書き言葉フルパッケージ（例：`unidic-cwj-202302_full.zip`）をダウンロード
+2. ダウンロードしたZIPに格納されている`lex*.csv` (`*`は任意の0文字以上の文字列)を、このフォルダ内にコピー
+3. `python build.py`を実行し、`migmeo-dict`ファイルを生成
 
-次に、`build.py` を実行すると、`migmeo-dict`ファイルを出力します。
-このファイルの単語は、読みの辞書順に並んでいます。
-
-```shell
-$ python build.py
-```
+生成されたファイルの単語は、読みの辞書順に並んでいます。
 
 ## 格納対象の単語
 
 `single_kanji.tsv` に格納されている漢字と読みの対応はすべて格納対象としています。
 
-一方、`lex_x_x.csv` からは、漢字のみか、漢字にひらがなが並んだ単語、英字のみの単語を対象としています。
+一方、`lex*.csv` からは、漢字のみか、漢字にひらがなが並んだ単語、英字のみの単語を対象としています。
 （例：朝、謝まる）
 
 ## ライセンス
