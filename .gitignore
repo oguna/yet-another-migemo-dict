@@ -1,2 +1,4 @@
 lex*.csv
 migemo-dict
+migemo-compact-dict
+node_modules/
