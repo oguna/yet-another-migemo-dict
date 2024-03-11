@@ -24,6 +24,11 @@ for (const line of lines) {
     const [key, ...values] = line.split('\t');
     if (key && values.length > 0) {
         // skip surrogate pair characters. Because rustmigemo doesn't support it.
+        const skippedValues = values.filter(value => containsSurrogatePair(value));
+        if (skippedValues.length) {
+            console.log(`Skipped(${key}):`, skippedValues);
+        }
+
         const filteredValues = values.filter(value => !containsSurrogatePair(value));
         if (filteredValues.length > 0) {
             dictMap.set(key, filteredValues);
