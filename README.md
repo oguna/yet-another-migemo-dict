@@ -16,9 +16,20 @@ C/Migemoで用いられているMigemo用辞書は、SKKプロジェクトの辞
 
 ## 生成方法
 
-1. [UniDic](https://clrd.ninjal.ac.jp/unidic/)から現代書き言葉フルパッケージ（例：`unidic-cwj-202302_full.zip`）をダウンロード
-2. ダウンロードしたZIPに格納されている`lex*.csv` (`*`は任意の0文字以上の文字列)を、このフォルダ内にコピー
-3. `python build.py`を実行し、`migmeo-dict`ファイルを生成
+依存関係のインストール:
+
+* python3
+* unzip command
+* node.js
+
+生成手順:
+1. `npm install`
+2. `python3 download.py`
+   * mozc の辞書と unidic の lex.csv をダウンロードします。 
+3. `python3 build.py`
+    * 辞書を生成します。
+4. `node build-compact-dict.js`
+   * 生成された辞書をコンパクトな形式に変換します。
 
 生成されたファイルの単語は、読みの辞書順に並んでいます。
 

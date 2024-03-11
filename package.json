@@ -1,0 +1,15 @@
+{
+  "name": "yet-another-migemo-dict",
+  "version": "",
+  "description": "ライセンスの緩いMigemo用辞書を提供するプロジェクト。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "oguna",
+  "license": "BSD",
+  "type": "module",
+  "devDependencies": {
+    "jsmigemo": "^0.4.8"
+  }
+}
