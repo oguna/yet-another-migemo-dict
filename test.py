@@ -1,4 +1,4 @@
-from build import convertAlphabeticWord, convertKanjiHiraganaWord, kata2hira
+from build import convertAlphabeticWord, convertKanjiHiraganaWord, kata2hira, has_surrogate_pair
 import unittest
 
 class TestMethods(unittest.TestCase):
@@ -19,6 +19,11 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(yomi, 'abc')
         pair = convertAlphabeticWord('あいう', 'エービーシー')
         self.assertIsNone(pair)
+
+    def test_has_surrogate_pair(self):
+        self.assertTrue(has_surrogate_pair('𠮟'))
+        self.assertTrue(has_surrogate_pair('𧘱'))
+        self.assertFalse(has_surrogate_pair('叱'))
 
 if __name__ == '__main__':
     unittest.main()

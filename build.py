@@ -41,6 +41,13 @@ def convertAlphabeticWord(word: str, reading: str):
     else:
         return None
 
+# サロゲートペアを含む文字か判定
+def has_surrogate_pair(text: str) -> bool:
+    for char in text:
+        if 0x010000 <= ord(char) <= 0x10FFFF:
+            return True
+    return False
+
 if __name__ == '__main__':
     dictionary = dict()
 
@@ -83,6 +90,16 @@ if __name__ == '__main__':
                         dictionary[kanji].append(kana)
                     else:
                         dictionary[kanji] = [kana]
+
+    # サロゲートペアが含まれている文字を除外
+    for k, v in dictionary.items():
+        words_to_remove = []
+        for word in v:
+            if has_surrogate_pair(word):
+                words_to_remove.append(word)
+                print(f'skip for surrogate pair: {k} - {word}')
+        if words_to_remove:
+            dictionary[k] = [x for x in v if x not in words_to_remove]
 
     # 出力
     sortedKeys = sorted(dictionary.keys())
