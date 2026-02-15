@@ -12,11 +12,11 @@ C/Migemoで用いられているMigemo用辞書は、SKKプロジェクトの辞
 | ファイル | プロジェクト | ライセンス | バージョン |
 |---|---|---|---|
 | single_kanji.tsv | [Mozc](https://github.com/google/mozc) | 3-clause BSD | [Jul 26, 2024](https://github.com/google/mozc/commit/819c1d255984ab9c85fc577f497f38ec71d4ca19) |
-| lex*.csv | [UniDic](https://clrd.ninjal.ac.jp/unidic/) | GPL / LGPL / 3-clause BSD | ver.2023.08 |
+| lex*.csv | [UniDic](https://clrd.ninjal.ac.jp/unidic/) | GPL / LGPL / 3-clause BSD | 2025-12-31 |
 
 ## 生成方法
 
-1. [UniDic](https://clrd.ninjal.ac.jp/unidic/)から現代書き言葉フルパッケージ（例：`unidic-cwj-202302_full.zip`）をダウンロード
+1. [UniDic](https://clrd.ninjal.ac.jp/unidic/)から現代書き言葉フルパッケージ（例：`unidic-cwj-202512_full.zip`）をダウンロード
 2. ダウンロードしたZIPに格納されている`lex*.csv` (`*`は任意の0文字以上の文字列)を、このフォルダ内にコピー
 3. `python build.py`を実行し、`migmeo-dict`ファイルを生成
 
@@ -35,7 +35,7 @@ C/Migemoで用いられているMigemo用辞書は、SKKプロジェクトの辞
 
 ## ライセンス
 
-辞書元はどちらもBSDで配布されているため、本プロジェクトで生成した辞書もBSDとなります。
+辞書元はどちらもBSDライセンスで配布されているため、本プロジェクトで生成した辞書もBSDライセンスとなります。
 ライセンスの条項に従いご利用ください。
 
 ## TODO
