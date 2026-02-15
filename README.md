@@ -9,10 +9,10 @@ C/Migemoで用いられているMigemo用辞書は、SKKプロジェクトの辞
 
 ## 辞書元
 
-| ファイル | プロジェクト | ライセンス |
-|---|---|---|
-| single_kanji.tsv | [Mozc](https://github.com/google/mozc) | 3-clause BSD |
-| lex*.csv | [UniDic](https://clrd.ninjal.ac.jp/unidic/) | GPL / LGPL / 3-clause BSD |
+| ファイル | プロジェクト | ライセンス | バージョン |
+|---|---|---|---|
+| single_kanji.tsv | [Mozc](https://github.com/google/mozc) | 3-clause BSD | [Jul 26, 2024](https://github.com/google/mozc/commit/819c1d255984ab9c85fc577f497f38ec71d4ca19) |
+| lex*.csv | [UniDic](https://clrd.ninjal.ac.jp/unidic/) | GPL / LGPL / 3-clause BSD | ver.2023.08 |
 
 ## 生成方法
 
